@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css" type="text/css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/white.min.css" type="text/css"/>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+<section>
+  <h1>Continuous integration</h1>
+  <hr>
+  <code>&lt;jeep@cphbusiness.dk&gt;</code>
+</section>
+<section>
+  <h2>What is Maven?</h2>
+  <p class="fragment">Dependency management</p>
+  <p class="fragment">Command line execution</p>
+  <p class="fragment">IDE independency</p>
+  <hr class="fragment">
+  <p class="fragment">Build automation</p>
+</section>
+<section>
+  <h2>How you have been developing software</h2>
+  <ul>
+    <li class="fragment">On your own machine</li>
+    <li class="fragment">Manual dependencies</li>
+    <li class="fragment">Local deployment</li>
+    <li class="fragment">... what could go wrong?</li>
+  </ul>
+</section>
+<section>
+  <h2>Build automation</h2>
+  <p>Automating compilation, packaging and execution</p>
+  <p class="frament">What does this give us?</p>
+</section>
+<section>
+  <h2>Continuous integration</h2>
+  <q>the practice of merging all developer working copies to a shared mainline several times a day</q> - Wikipedia
+</section>
+<section>
+  <h2>Continuous integration</h2>
+  <p>Because of build automation, your code can build <i>anywhere</i></p>
+  <p class="fragment">If you can build anywhere, you can test it runs anywhere!</p>
+</section>
+<section>
+  <h2>Git commit hooks</h2>
+  <p>You can <i>hook</i> into events in Git <small>(what pattern is this?</small></p>
+  <p class="fragment">How can you exploit this?</p>
+  <p class="fragment">Trigger a build!</p>
+</section>
+<section>
+  <h2>Build server</h2>
+  <p>Simply just a server that builds the project</p>
+  <p class="fragment">Many different servers exist<span class="fragment">, but we'll use <a href="https://travis-ci.org">Travis-CI</a> <span class="fragment"><br>(it's free for open-source)</span></p>
+</section>
+<section>
+  <h2>Continuous integration workflow</h2>
+  <ol>
+   <li class="fragment">Programmer writes code</li>
+   <li class="fragment">Programmer commits and pushes new feature</li>
+   <li class="fragment">Git triggers a build on a build server</li>
+   <li class="fragment">Build server compiles, packages and runs it</li>
+  </ol>
+</section>
+<section>
+  <h2>Continuous deployment</h2>
+  <p>When the build server has the <code>.jar</code> file, why not use it to release?</p>
+</section>
+<section>
+  <h2>CI benefits</h2>
+  <ul>
+   <li class="fragment">No integration bugs (/hell)</li>
+   <li class="fragment">Easy to deploy and release</li>
+   <li class="fragment">Frequent integration = fast development</li>
+   <li class="fragment">Constant available working version</li>
+  </ul>
+</section>
+<section>
+  <h2>CI in your project</h2>
+  <p>Set CI up <u>from the beginning</u></p>
+  <p class="fragment">Commit early, commit often</p>
+  <p class="fragment">Always commit working versions!</p>
+</section>
+<section>
+  <h2>The remainder of today:</h2>
+  <ol>
+    <li>Demo of CI using Maven, GitHub and Travis-CI</li>
+    <li class="fragment">Try it yourselves!</li>
+  </ol>
+</section>
+</div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
+<script type="text/javascript">
+Reveal.initialize({
+
+    // Display controls in the bottom right corner
+    controls: true,
+
+    // Display a presentation progress bar
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: false,
+
+    // Push each slide change to the browser history
+    history: true,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    center: true,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Randomizes the order of slides each time the presentation loads
+    shuffle: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Flags if we should show a help overlay when the questionmark
+    // key is pressed
+    help: true,
+
+    // Flags if speaker notes should be visible to all viewers
+    showNotes: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Use this method for navigation when auto-sliding
+    autoSlideMethod: Reveal.navigateNext,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // none/fade/slide/convex/concave/zoom
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+    // Number of pixels to move the parallax background per slide
+    // - Calculated automatically unless specified
+    // - Set to 0 to disable movement along an axis
+    parallaxBackgroundHorizontal: null,
+    parallaxBackgroundVertical: null
+
+});
+</script>
+</body>
+</html>
+
