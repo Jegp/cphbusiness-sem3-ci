@@ -44,11 +44,13 @@
   <h2>Continuous integration</h2>
   <p>Because of build automation, your code can build <i>anywhere</i></p>
   <p class="fragment">If you can build anywhere, you can test it runs anywhere!</p>
-  <p class="fragment">... And if <a href="https://www.youtube.com/watch?v=1EGk2rvZe8A">someone breaks your build...</a></p>
+  <p class="fragment">... And if someone breaks your build...
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1EGk2rvZe8A?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </p>
 </section>
 <section>
   <h2>Git commit hooks</h2>
-  <p>You can <i>hook</i> into events in Git <small>(what pattern is this?</small></p>
+  <p>You can <i>hook</i> into events in Git <small>(what pattern is this?)</small></p>
   <p class="fragment">How can you exploit this?</p>
   <p class="fragment">Trigger a build!</p>
 </section>
@@ -84,6 +86,43 @@
   <p>Set CI up <u>from the beginning</u></p>
   <p class="fragment">Commit early, commit often</p>
   <p class="fragment">Always commit working versions!</p>
+</section>
+<section>
+  <h2>Try it out!</h2>
+  <ol>
+    <li>Fork <code>https://github.com/Jegp/cphbusiness-sem3-ci</code></li>
+    <li>Open the <code>travis_guide.md</code> file on GitHub and follow the instructions</li>
+  </ol>
+</section>
+<section>
+  <h2>Continuous deployment</h2>
+  <ul>
+    <li class="fragment">Since everything is automated, why not also deploy it?</li>
+    <li>CD <i>continuously</i> deploys your newest git commits</li>
+  </ul>
+</section>
+<section>
+  <h2>Continuous deployment workflow</h2>
+  <ol>
+    <li class="fragment">Programmer writes code</li>
+    <li class="fragment">Programmer commits and pushes new feature</li>
+    <li class="fragment">Git triggers a build on a build server</li>
+    <li class="fragment">Build server compiles, packages and runs it</li>
+    <li class="fragment">Build server <i>pushes the binaries</i> to production</li>
+  </ol>
+</section>
+<section>
+  <h2>GitHub pages</h2>
+  <p class="fragment">GitHub allows static hosting at <code>&lt;username&rt;</code>.github.io/<code>&lt;projectname&rt;</code></p>
+  <p class="fragment">Can be done either from the master branch or from the <code>gh-pages</code> branch</p>
+</section>
+
+<section>
+  <h2>Try it out!</h2>
+  <ol>
+    <li>Fork <code>https://github.com/Jegp/cphbusiness-sem3-ci</code></li>
+    <li>Open the <code>travis_guide.md</code> file on GitHub and follow the instructions</li>
+  </ol>
 </section>
 <section>
   <h2>The remainder of today:</h2>
@@ -194,4 +233,3 @@ Reveal.initialize({
 </script>
 </body>
 </html>
-
